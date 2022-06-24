@@ -7,10 +7,7 @@ function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#61sfd" />
       <ScrollView style={styles.scrollView}>
-        <WebView
-          source={{uri: 'https://kscode.vercel.app/'}}
-          style={styles.webview}
-        />
+        <WebView source={{uri: 'https://beerair.ml/'}} style={styles.webview} />
       </ScrollView>
     </SafeAreaView>
   );
