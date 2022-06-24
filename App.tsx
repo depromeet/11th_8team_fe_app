@@ -1,28 +1,29 @@
 import * as React from 'react';
-import {StyleSheet, SafeAreaView, StatusBar, ScrollView} from 'react-native';
+import {StyleSheet, SafeAreaView, StatusBar, Dimensions} from 'react-native';
 import {WebView} from 'react-native-webview';
+
+const screen = Dimensions.get('screen');
 
 function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="#61sfd" />
-      <ScrollView style={styles.scrollView}>
-        <WebView source={{uri: 'https://beerair.ml/'}} style={styles.webview} />
-      </ScrollView>
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
+      <WebView source={{uri: 'https://beerair.ml/'}} style={styles.webview} />
     </SafeAreaView>
   );
 }
 
-export default App;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000',
   },
   webview: {
-    height: 875,
+    height: screen.height,
   },
   scrollView: {
     flexGrow: 1,
   },
 });
+
+export default App;
