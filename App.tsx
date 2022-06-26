@@ -1,10 +1,22 @@
 import * as React from 'react';
+import {useEffect} from 'react';
 import {StyleSheet, SafeAreaView, StatusBar, Dimensions} from 'react-native';
 import {WebView} from 'react-native-webview';
+import SplashScreen from 'react-native-splash-screen';
 
 const screen = Dimensions.get('screen');
 
+const SPLASH_DELAY = 500;
+
 function App() {
+  useEffect(() => {
+    const splashTimeoutId = setTimeout(() => {
+      SplashScreen.hide();
+    }, SPLASH_DELAY);
+
+    return () => clearTimeout(splashTimeoutId);
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
