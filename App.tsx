@@ -8,7 +8,7 @@ function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
-      <WebView source={{uri: 'https://beerair.ml/'}} style={styles.webview} />
+      <WebView source={{uri: 'https://beerair.kr/'}} style={styles.webview} />
     </SafeAreaView>
   );
 }
